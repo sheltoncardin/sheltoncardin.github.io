@@ -1,34 +1,80 @@
 <!DOCTYPE html>
-<html>
-    <meta charset="UTF8">
-    <head>
-        <script src="form.js"></script>
-        <link rel="stylesheet" href="form.css">
-        <title>Registration Form</title>
-    </head>
-    <body>
-        <h1>Registration Form</h1>
-        <form>
-            <div class="t">
-                <label>Name :</label>
-                <input type="text" name="name" id="name" size="25">
-                <br>
-                <br>
-                <label>Email :</label>
-                <input type="email" name="email" id="email" size="30">
-                <br>
-                <br>
-                <label>Password :</label>
-                <input type="password" name="password" id="pass" size="16">
-                <br>
-                <br>
-                <label>Confirm Password :</label>
-                <input type="password" id="repass" size="16">
-                <br>
-                <br>
-                <p id="error" class="danger"></p>
-                <input  onclick="formSub()" type="button" value="Submit">
-            </div>
-        </form>
-    </body>
+
+<head>
+    <title>User Registration</title>
+    <link rel="stylesheet" href="css/form.css">
+    <script src="js/form.js"></script>
+</head>
+
+<body>
+    <h3>User Registration</h3>
+    <form name="myForm" onsubmit="return validateForm()" method="POST">
+        <table align="center" cellpadding="10">
+
+            <!----- Full Name ---------------------------------------------------------->
+            <tr>
+                <td>Full Name:*</td>
+                <td><input type="text" name="Name" maxlength="25" />
+                </td>
+            </tr>
+
+            <!----- Address ---------------------------------------------------------->
+            <tr>
+                <td>Address:*<br /><br /><br /></td>
+                <td><textarea name="Address" rows="4" cols="30"></textarea></td>
+            </tr>
+
+            <!----- Email Id ---------------------------------------------------------->
+            <tr>
+                <td>Email ID:*</td>
+                <td><input type="text" name="EmailId" maxlength="100" /></td>
+            </tr>
+
+            <!----- Mobile Number ---------------------------------------------------------->
+            <tr>
+                <td>Mobile Number:*</td>
+                <td>
+                    <input type="number" name="Mob" maxlength="10" />
+                    (10 digit number)
+                </td>
+            </tr>
+            <!----- Gender ----------------------------------------------------------->
+            <tr>
+                <td>Gender:*</td>
+                <td>
+                    Male <input type="radio" name="Gender" value="Male" />
+                    Female <input type="radio" name="Gender" value="Female" />
+                </td>
+            </tr>
+            <!----- Hobbies ---------------------------------------------------------->
+            <tr>
+                <td>Hobbies:<br /><br /><br /></td>
+
+                <td>
+                    Drawing
+                    <input type="checkbox" name="Hobby_Drawing" value="Drawing" />
+                    Singing
+                    <input type="checkbox" name="Hobby_Singing" value="Singing" />
+                    Dancing
+                    <input type="checkbox" name="Hobby_Dancing" value="Dancing" />
+                    Sketching
+                    <input type="checkbox" name="Hobby_Cooking" value="Cooking" />
+                    <br />
+                    Others
+                    <input type="checkbox" name="Hobby_Other" value="Other">
+                    <input type="text" name="Other_Hobby" maxlength="30" />
+                </td>
+            </tr>
+            <!----- Submit and Reset ------------------------------------------------->
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+            <td>* = Compulsory</td>
+        </table>
+    </form>
+</body>
+
 </html>
